@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import java.time.LocalDate;
 
 @Data
 @Entity
@@ -14,11 +15,12 @@ public class Song {
     @GeneratedValue
     private Long id;
 
-    private String text;
     private String title;
-    private String genre;
+    private Long duration;
     @OneToOne
     private Singer singer;
     @OneToOne
     private Album album;
+    private LocalDate release;
+    private String genre;
 }
